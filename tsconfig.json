@@ -1,0 +1,13 @@
+{
+  "include": ["src/*.ts", "test/*.spec.ts"],
+  "compilerOptions": {
+    "types": ["vue"],
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "lib": ["ES2023", "DOM"]
+  }
+}
