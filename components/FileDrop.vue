@@ -1,9 +1,11 @@
 <template>
   <div class="vue-form__file-container">
     <div class="vue-form__file-drop">
-      <div class="vue-form__file"></div>
+      <slot></slot>
     </div>
-    <div class="vue-form__file-button"></div>
+    <div class="vue-form__file-button">
+      <slot></slot>
+    </div>
     <input type="file" />
   </div>
 </template>
