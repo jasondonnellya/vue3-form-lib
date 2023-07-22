@@ -1,4 +1,4 @@
-import { openBlock, createElementBlock, renderSlot, createElementVNode, pushScopeId, popScopeId, normalizeClass, Fragment, renderList } from 'vue';
+import { openBlock, createElementBlock, renderSlot, createElementVNode, normalizeClass, Fragment, renderList } from 'vue';
 
 var script$5 = {
   name: "FormButton"
@@ -47,9 +47,8 @@ script$5.render = render;
 script$5.__scopeId = "data-v-8bc7c966";
 script$5.__file = "components/Button.vue";
 
-const _withScopeId$1 = n => (pushScopeId("data-v-4755ca9e"),n=n(),popScopeId(),n);
 const _hoisted_1$4 = ["disabled", "checked"];
-const _hoisted_2$3 = /*#__PURE__*/ _withScopeId$1(() => /*#__PURE__*/createElementVNode("div", { class: "vue-form__checkbox-inner" }, null, -1 /* HOISTED */));
+const _hoisted_2$3 = { class: "vue-form__checkbox-inner" };
 
 
 const __default__$4 = {
@@ -79,7 +78,9 @@ return (_ctx, _cache) => {
       onClick: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', !__props.modelValue))),
       type: "checkbox"
     }, null, 8 /* PROPS */, _hoisted_1$4),
-    _hoisted_2$3
+    createElementVNode("div", _hoisted_2$3, [
+      renderSlot(_ctx.$slots, "default")
+    ])
   ]))
 }
 }
@@ -166,7 +167,6 @@ return (_ctx, _cache) => {
       onClick: _cache[4] || (_cache[4] = (e) => {
       e.preventDefault();
       e.stopPropagation();
-      console.log(e.target);
       e.target?.parentNode?.querySelector(`input[type='file']`)?.click();
     })
     }, [
@@ -223,11 +223,10 @@ return (_ctx, _cache) => {
 
 script$2.__file = "components/Input.vue";
 
-const _withScopeId = n => (pushScopeId("data-v-69296ba0"),n=n(),popScopeId(),n);
 const _hoisted_1$1 = { class: "vue-form__radio" };
 const _hoisted_2$1 = { class: "vue-form__checkbox" };
 const _hoisted_3 = ["disabled", "checked", "onClick"];
-const _hoisted_4 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/createElementVNode("div", { class: "vue-form__checkbox-inner" }, null, -1 /* HOISTED */));
+const _hoisted_4 = { class: "vue-form__checkbox-inner" };
 
 
 const __default__$1 = {
@@ -265,7 +264,9 @@ return (_ctx, _cache) => {
         },
             type: "checkbox"
           }, null, 8 /* PROPS */, _hoisted_3),
-          _hoisted_4
+          createElementVNode("div", _hoisted_4, [
+            renderSlot(_ctx.$slots, "checkbox-inner")
+          ])
         ]),
         renderSlot(_ctx.$slots, `option-after-${index}`)
       ]))

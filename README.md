@@ -1,4 +1,5 @@
 TODO:
 
-Make sure that classes are inheritable by components.
+Try to fix console warnings in Node for TypeScript rollup
+
 Write readme.

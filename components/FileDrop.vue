@@ -12,7 +12,6 @@ defineEmits(['update:modelValue', 'error'])
     <div class="vue-form__file-button" @click="(e) => {
       e.preventDefault()
       e.stopPropagation()
-      console.log(e.target)
       e.target?.parentNode?.querySelector(`input[type='file']`)?.click()
     }">
       <slot name="button"></slot>
