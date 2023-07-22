@@ -1,25 +1,27 @@
+<script setup>
+// https://vuejs.org/guide/components/v-model.html
+defineProps(['modelValue', 'disabled'])
+defineEmits(['update:modelValue'])
+</script>
+
 <template>
-  <select class="vue-form__select" v-model="inputVal">
-    <slot></slot>
-  </select>
+  <div class="vue-form__select">
+    <slot name="before"></slot>
+    <select :disabled="disabled" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
+      <slot></slot>
+    </select>
+    <slot name="after"></slot>
+  </div>
 </template>
 
 <script>
 export default {
   name: "FormSelect",
-  // https://stackoverflow.com/questions/47311936/v-model-and-child-components
-  props: {
-    value: [String, Number]
-  },
-  computed: {
-    inputVal: {
-      get() {
-        return this.value;
-      },
-      set(val) {
-        this.$emit('input', val);
-      }
-    }
-  }
 }
 </script>
+
+<style scoped>
+.vue-form__select {
+  cursor: pointer;
+}
+</style>

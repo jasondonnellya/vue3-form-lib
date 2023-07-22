@@ -1,5 +1,6 @@
 {
   "include": ["src/*.ts", "test/*.spec.ts"],
+  "exclude": ["node_modules", "test/*.spec.ts"],
   "compilerOptions": {
     "types": ["vue"],
     "strict": true,
@@ -8,6 +9,8 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
-    "lib": ["ES2023", "DOM"]
+    "lib": ["ES2023", "DOM"],
+    "declarationDir": "dist/types/",
+    "declaration": true
   }
 }

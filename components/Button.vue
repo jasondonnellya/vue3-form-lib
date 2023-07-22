@@ -9,3 +9,9 @@ export default {
   name: "FormButton"
 }
 </script>
+
+<style scoped>
+.vue-form__button {
+  cursor: pointer;
+}
+</style>

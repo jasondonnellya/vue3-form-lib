@@ -1,27 +1,31 @@
+<script setup>
+// https://vuejs.org/guide/components/v-model.html
+defineProps(['modelValue', 'disabled'])
+defineEmits(['update:modelValue'])
+</script>
+
 <template>
-  <div
-    class="vue-form__checkbox"
-    @click="(e) => {
-      e?.target?.children[0]?.click()
-    }">
-    <input :disabled="disabled" v-model="inputVal" type="checkbox" />
+  <div class="vue-form__checkbox" @click="(e) => {
+    e?.target?.querySelector(`input[type='checkbox']`)?.click()
+  }">
+    <input :disabled="disabled" :checked="modelValue" @click="$emit('update:modelValue', !modelValue)" type="checkbox" />
+    <div class="vue-form__checkbox-inner">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "FormCheckbox",
-  // https://stackoverflow.com/questions/47311936/v-model-and-child-components
-  props: ['value', 'disabled'],
-  computed: {
-    inputVal: {
-      get() {
-        return this.value;
-      },
-      set(val) {
-        this.$emit('input', val);
-      }
-    }
-  }
 }
 </script>
+
+<style scoped>
+.vue-form__checkbox {
+  cursor: pointer;
+  * {
+    pointer-events: none;
+  }
+}
+</style>

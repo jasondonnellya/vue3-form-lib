@@ -8,6 +8,7 @@
 const prefix = "dist";
 import typescript from "@rollup/plugin-typescript";
 import vue from 'rollup-plugin-vue'
+import postcss from 'rollup-plugin-postcss';
 // import terser from '@rollup/plugin-terser';
 
 export default {
@@ -20,7 +21,10 @@ export default {
   ],
   plugins: [
     typescript(),
-    vue(),
+    vue({
+      preprocessStyles: true
+    }),
+    postcss()
     // terser()
   ],
 };
