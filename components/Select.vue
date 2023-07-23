@@ -1,5 +1,5 @@
-<script setup>
-// https://vuejs.org/guide/components/v-model.html
+<script setup lang="ts">
+import { defineComponent } from 'vue'
 defineProps(['modelValue', 'disabled'])
 defineEmits(['update:modelValue'])
 </script>
@@ -7,17 +7,20 @@ defineEmits(['update:modelValue'])
 <template>
   <div class="vue-form__select">
     <slot name="before"></slot>
-    <select :disabled="disabled" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)">
+    <select :disabled="disabled" :value="modelValue" @input="(e) => {
+      const target = <HTMLSelectElement>e.target
+      $emit('update:modelValue', target.value)
+    }">
       <slot></slot>
     </select>
     <slot name="after"></slot>
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+export default defineComponent({
   name: "FormSelect",
-}
+})
 </script>
 
 <style scoped>
