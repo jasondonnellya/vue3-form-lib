@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { defineComponent } from 'vue'
-defineProps(['modelValue', 'disabled'])
+import { computed, defineComponent } from 'vue'
+const $props = defineProps(['modelValue', 'disabled'])
 defineEmits(['update:modelValue'])
+const className = computed(() => {
+  return $props.disabled ? 'vue-form__select--disabled' : ''
+})
 </script>
 
 <template>
-  <div class="vue-form__select">
+  <div class="vue-form__select" :class="className">
     <slot name="before"></slot>
     <select :disabled="disabled" :value="modelValue" @input="(e) => {
       const target = <HTMLSelectElement>e.target

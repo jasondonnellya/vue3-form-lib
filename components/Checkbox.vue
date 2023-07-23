@@ -11,7 +11,7 @@ defineEmits(['update:modelValue'])
     checkbox?.click()
   }">
     <input :disabled="disabled" :checked="modelValue" @click="$emit('update:modelValue', !modelValue)" type="checkbox" />
-    <div class="vue-form__checkbox-inner">
+    <div v-show="modelValue" class="vue-form__checkbox-inner">
       <slot></slot>
     </div>
   </div>

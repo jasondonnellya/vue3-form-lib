@@ -5,10 +5,10 @@
   "types": "./dist/esm/types/index.d.ts",
   "main": "./dist/esm/index.js",
   "scripts": {
-    "test": "",
+    "test": "vitest --dom",
     "clean": "rimraf dist",
     "build": "npm run clean && rollup -c",
-    "prebuild": "npm run test",
+    "prebuild": "",
     "prepack": "npm run build"
   },
   "author": "Jason Donnelly",

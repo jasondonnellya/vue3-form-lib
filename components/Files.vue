@@ -36,10 +36,13 @@ const DragLeave = () => {
 const dropClass = computed(() => {
   return dragover ? 'vue-form__file-drop--hover' : ''
 })
+const className = computed(() => {
+  return $props.disabled ? 'vue-form__files--disabled' : ''
+})
 </script>
 
 <template>
-  <div class="vue-form__file-container">
+  <div class="vue-form__files" :class="className">
     <div class="vue-form__file-drop" :class="dropClass" @drop="Drop" @dragstart="DragStart" @dragover="DragOver"
       @dragleave="DragLeave">
       <slot name="drop"></slot>
