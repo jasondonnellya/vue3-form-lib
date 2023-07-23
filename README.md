@@ -20,7 +20,7 @@ Note: vue3-form-lib will only work in Vue3 + Typescript environments.
 Independent Example
 
 ```TS
-import registerVueFormLibrary from 'vue-form-lib'
+import registerVueFormLibrary from 'vue3-form-lib'
 
 registerVueFormLibrary(app)
 ```
@@ -31,7 +31,7 @@ Project Example
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import registerVueFormLibrary from 'vue-form-lib'
+import registerVueFormLibrary from 'vue3-form-lib'
 
 const app = createApp(App)
 

@@ -1,6 +1,6 @@
 {
   "name": "vue3-form-lib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Form controls for VueJS that can be easily abstracted.",
   "types": "./dist/esm/index.d.ts",
   "main": "./dist/esm/index.js",
