@@ -157,7 +157,6 @@ disabled: Boolean - adds vue-form__radio--disabled to root element and disables 
 <!-- <slot :name="`checkbox-inner-${String(index)}`"></slot> -->
 <!-- <slot :name="`option-after-${String(index)}`"></slot> -->
 <!-- These slots must match their dynamic names exactly but can be used to apply icons to the checkbox-inner HTML or to add text to before or after each radio value. -->
-<slot :name="`option-after-${String(index)}`"></slot>
 <FormRadio v-model="form.radioValue" :values="arrayOfValues">
   <template v-for="(value, index) in arrayOfValues" v-slot:[`option-before-${index}`]>{{ radioValue }}</template>
 </FormRadio>
